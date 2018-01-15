@@ -1,0 +1,297 @@
+length(c)
+help(save)
+savehistory("~/Documents/Code/R/Question1.Rhistory")
+faithful
+duration = faithful$eruptions
+waiting = faithful$waiting
+duration
+waiting
+help(pie)
+pie(duration, edges = 200, radius = 1.0, breaks = 0.5)
+pie(duration, edges = 200, labels = "Eruption's duration", radius = 1.0, breaks = 0.5)
+pie(duration, edges = 200, title = "Eruption's duration", radius = 1.0, breaks = 0.5)
+pie(waiting, edges = 200, main = "Eruption's waiting", radius = 1.0, breaks = 0.5)
+help(plot)
+plot(duration, waiting, main = "Duration of Eruption vs Waiting times", xlab = "Durations", ylab = "Waiting", type = "p")
+plot(duration, waiting, main = "Duration of Eruption vs Waiting times", xlab = "Durations", ylab = "Waiting", type = "b")
+plot(duration, waiting, main = "Duration of Eruption vs Waiting times", xlab = "Durations", ylab = "Waiting", type = "h")
+plot(waiting, duration, main = "Duration of Eruption vs Waiting times", ylab = "Durations", xlab = "Waiting", type = "h")
+plot(waiting, duration, main = "Duration of Eruption vs Waiting times", ylab = "Durations", xlab = "Waiting", type = "h", breaks = 242)
+plot(waiting, duration, main = "Duration of Eruption vs Waiting times", ylab = "Durations", xlab = "Waiting", type = "h")
+plot(duration, waiting, main = "Duration of Eruption vs Waiting times", xlab = "Durations", ylab = "Waiting", type = "h")
+help
+help(lm)
+model = lm(waiting ~ duration, faithful)
+model
+help(abline)
+abline(model)
+help(abline)
+abline(model, col = red)
+abline(model, col = "red")
+abline(model, col = "red", lwd = 05)
+abline(model, col = "red", lwd = 5)
+abline(model, col = "red", lwd = 10)
+help(data.frame)
+help(sapply)
+faithful$type = apply(faithful, 1, function(row) if(faithful$eruptions > 3.10) "short" else "long")
+faihful
+faithful
+faithful$type = apply(faithful, 1, function(row) (if(faithful$eruptions > 3.10) "short" else "long"))
+faithful$type = apply(faithful, 1, function(row) (if(faithful$eruptions > 3.10) "short" else "long"))
+faithful
+help(apply)
+checkifshort = function(eruption){}
+checkifshort = function(eruption){
+if(waiting > 3.100)
+return "longer"
+if(waiting > 3.100)
+checkifshort = function(eruption, type = "test"){
+if(waiting > 3.100)
+type = "longer"
+else
+type = "shorter"
+}
+faithful$type = checkifshort(faithful$eruptions, type = "test")
+faithful
+if(all(faithful$eruptions < 3.100)) faithful$type = "short"
+faithful
+if(all(faithful$eruptions < 3.100)){ faithful$type = "short" }
+faithful
+faithful$type = ifelse(faithful$eruptions > 3.100, "short", "long")
+faithful
+help(sort)
+sort(faithful$eruptions, decreasing = FALSE)
+faithful
+faithful$type = ifelse(faithful$eruptions < 3.100, "short", "long")
+faithful
+
+
+
+> boxplot(waiting ~ type, faithful)
+> help(boxplot)
+> boxplot(duration ~ type, faithful)
+> help(rtriangle)
+No documentation for ‘rtriangle’ in specified packages and libraries:
+you could try ‘??rtriangle’
+> help(triangle)
+No documentation for ‘triangle’ in specified packages and libraries:
+you could try ‘??triangle’
+> install.package("triangle")
+Error: could not find function "install.package"
+> install.packages("triangle")
+trying URL 'http://cran.rstudio.com/bin/macosx/contrib/3.0/triangle_0.8.tgz'
+Content type 'application/x-gzip' length 20082 bytes (19 Kb)
+opened URL
+==================================================
+downloaded 19 Kb
+
+
+The downloaded binary packages are in
+	/var/folders/9j/z1qkl9n576qf5_7fp25rn85m0000gn/T//RtmpEA6qJR/downloaded_packages
+> install.packages("e1071")
+trying URL 'http://cran.rstudio.com/bin/macosx/contrib/3.0/e1071_1.6-2.tgz'
+Content type 'application/x-gzip' length 725939 bytes (708 Kb)
+opened URL
+==================================================
+downloaded 708 Kb
+
+
+The downloaded binary packages are in
+	/var/folders/9j/z1qkl9n576qf5_7fp25rn85m0000gn/T//RtmpEA6qJR/downloaded_packages
+> help(rtriangle)
+No documentation for ‘rtriangle’ in specified packages and libraries:
+you could try ‘??rtriangle’
+> help("rtriangle")
+No documentation for ‘rtriangle’ in specified packages and libraries:
+you could try ‘??rtriangle’
+> help("rtriangle()")
+No documentation for ‘rtriangle()’ in specified packages and libraries:
+you could try ‘??rtriangle()’
+> help(rtriangle)
+No documentation for ‘rtriangle’ in specified packages and libraries:
+you could try ‘??rtriangle’
+> install.packages("triangle")
+trying URL 'http://cran.rstudio.com/bin/macosx/contrib/3.0/triangle_0.8.tgz'
+Content type 'application/x-gzip' length 20082 bytes (19 Kb)
+opened URL
+==================================================
+downloaded 19 Kb
+
+
+The downloaded binary packages are in
+	/var/folders/9j/z1qkl9n576qf5_7fp25rn85m0000gn/T//RtmpEA6qJR/downloaded_packages
+> getwd()
+[1] "/Users/sudeeparohith"
+> ls
+function (name, pos = -1L, envir = as.environment(pos), all.names = FALSE, 
+    pattern) 
+{
+    if (!missing(name)) {
+        nameValue <- try(name, silent = TRUE)
+        if (identical(class(nameValue), "try-error")) {
+            name <- substitute(name)
+            if (!is.character(name)) 
+                name <- deparse(name)
+            warning(gettextf("%s converted to character string", 
+                sQuote(name)), domain = NA)
+            pos <- name
+        }
+        else pos <- nameValue
+    }
+    all.names <- .Internal(ls(envir, all.names))
+    if (!missing(pattern)) {
+        if ((ll <- length(grep("[", pattern, fixed = TRUE))) && 
+            ll != length(grep("]", pattern, fixed = TRUE))) {
+            if (pattern == "[") {
+                pattern <- "\\["
+                warning("replaced regular expression pattern '[' by  '\\\\['")
+            }
+            else if (length(grep("[^\\\\]\\[<-", pattern))) {
+                pattern <- sub("\\[<-", "\\\\\\[<-", pattern)
+                warning("replaced '[<-' by '\\\\[<-' in regular expression pattern")
+            }
+        }
+        grep(pattern, all.names, value = TRUE)
+    }
+    else all.names
+}
+<bytecode: 0x7fd2f29a2ca8>
+<environment: namespace:base>
+> help(rltriangle)
+No documentation for ‘rltriangle’ in specified packages and libraries:
+you could try ‘??rltriangle’
+> help(plot)
+> help(triangle)
+No documentation for ‘triangle’ in specified packages and libraries:
+you could try ‘??triangle’
+> ??triangle
+> probabilities = rltriangle(n = 20, a = 0, b = 1)
+Error: could not find function "rltriangle"
+> probabilities = rtriangle(n = 20, a = 0, b = 1)
+Error: could not find function "rtriangle"
+> tri <- rltriangle(100000, 1, 100, 10)
+Error: could not find function "rltriangle"
+> install.packages("ade4")
+trying URL 'http://cran.rstudio.com/bin/macosx/contrib/3.0/ade4_1.6-2.tgz'
+Content type 'application/x-gzip' length 2789590 bytes (2.7 Mb)
+opened URL
+==================================================
+downloaded 2.7 Mb
+
+
+The downloaded binary packages are in
+	/var/folders/9j/z1qkl9n576qf5_7fp25rn85m0000gn/T//RtmpEA6qJR/downloaded_packages
+> help(triangle)
+No documentation for ‘triangle’ in specified packages and libraries:
+you could try ‘??triangle’
+> help(rtriangle)
+No documentation for ‘rtriangle’ in specified packages and libraries:
+you could try ‘??rtriangle’
+> help(rltriangle)
+No documentation for ‘rltriangle’ in specified packages and libraries:
+you could try ‘??rltriangle’
+> help("rltriangle")
+No documentation for ‘rltriangle’ in specified packages and libraries:
+you could try ‘??rltriangle’
+> help('triangle')
+No documentation for ‘triangle’ in specified packages and libraries:
+you could try ‘??triangle’
+> install.packages('triangle')
+trying URL 'http://cran.rstudio.com/bin/macosx/contrib/3.0/triangle_0.8.tgz'
+Content type 'application/x-gzip' length 20082 bytes (19 Kb)
+opened URL
+==================================================
+downloaded 19 Kb
+
+
+The downloaded binary packages are in
+	/var/folders/9j/z1qkl9n576qf5_7fp25rn85m0000gn/T//RtmpEA6qJR/downloaded_packages
+> help(triangle)
+No documentation for ‘triangle’ in specified packages and libraries:
+you could try ‘??triangle’
+> help(rtriangle)
+No documentation for ‘rtriangle’ in specified packages and libraries:
+you could try ‘??rtriangle’
+> install.packages("~/Downloads/triangle_0.8.tgz", repos = NULL)
+> library(triangle)
+> help(triangle)
+> probability = rtriangle(n = 20, a=0, b=1, c=(a+b)/2)
+Error in rtriangle(n = 20, a = 0, b = 1, c = (a + b)/2) : 
+  object 'a' not found
+> probability = rtriangle(n, a=0, b=1, c=(a+b)/2)
+Error in rtriangle(n, a = 0, b = 1, c = (a + b)/2) : object 'n' not found
+> rtriangle(n, a=0, b=1, c=(a+b)/2)
+Error in rtriangle(n, a = 0, b = 1, c = (a + b)/2) : object 'n' not found
+> n = 20
+> rtriangle(n, a=0, b=1, c=(a+b)/2)
+Error in rtriangle(n, a = 0, b = 1, c = (a + b)/2) : object 'a' not found
+> a = 0
+> b = 1
+> rtriangle(n, a=0, b=1, c=(a+b)/2)
+ [1] 0.3946758 0.2618341 0.4362157 0.7442449 0.7341609 0.3783101 0.3784083
+ [8] 0.7103163 0.5108291 0.6837496 0.3846691 0.7840648 0.8508096 0.2676964
+[15] 0.2273152 0.2894262 0.5330026 0.6644642 0.4908245 0.4082026
+> hist(rtriangle(n, a=0, b=1, c=(a+b)/2))
+> hist(rtriangle(n, a=0, b=1, c=(a+b)/2), breaks = 20)
+> hist(rtriangle(n, a=0, b=1, c=(a+b)/2), breaks = 40)
+> hist(rtriangle(n, a=0, b=1, c=(a+b)/2), breaks = 100)
+> n = 100
+> hist(rtriangle(n, a=0, b=1, c=(a+b)/2), breaks = 100)
+> firsthalf = rtriangle(n, a=0, b=0.5, c=(a+b)/2)
+> firsthalf
+  [1] 0.19718775 0.18424223 0.49947415 0.26830407 0.37910202 0.21574517 0.49027107
+  [8] 0.26735798 0.22311193 0.48429933 0.37380818 0.31600452 0.45968869 0.43804293
+ [15] 0.35627439 0.45247225 0.44597766 0.49401951 0.19302512 0.33149931 0.22922848
+ [22] 0.41115311 0.21959312 0.38191832 0.41794026 0.27781522 0.37445356 0.20202923
+ [29] 0.31257458 0.24672820 0.06012546 0.40308159 0.34549105 0.21549895 0.37840734
+ [36] 0.30678268 0.48882950 0.38503035 0.26869710 0.46928185 0.25823403 0.17485791
+ [43] 0.46878520 0.48463832 0.24458063 0.33436978 0.49474642 0.43237772 0.16513320
+ [50] 0.16255925 0.44268818 0.36897228 0.17287997 0.40819920 0.27435841 0.38067617
+ [57] 0.25548226 0.15364765 0.23583327 0.35575795 0.45228023 0.46659842 0.40008302
+ [64] 0.46939413 0.37337621 0.30439581 0.32210346 0.19005763 0.28306881 0.18045596
+ [71] 0.47410462 0.43720188 0.36451380 0.34999449 0.30535002 0.29913570 0.44320615
+ [78] 0.47722772 0.25409568 0.18413194 0.44294838 0.32543099 0.40789055 0.35986598
+ [85] 0.36588399 0.28647385 0.38543069 0.19390131 0.45847579 0.40570906 0.15115146
+ [92] 0.06723553 0.45901774 0.41125083 0.25046670 0.27559125 0.11360040 0.45496349
+ [99] 0.23227578 0.09456260
+> a = 0.5
+> b = 1.0
+> secondhalf = rtriangle(n, a=0.5, b=1, c=(a+b)/2)
+> secondhalf
+  [1] 0.6619073 0.8695134 0.7983099 0.7808685 0.7632202 0.7434132 0.8264487
+  [8] 0.8067059 0.8588160 0.9309738 0.6373378 0.7557964 0.5772778 0.6672202
+ [15] 0.8341239 0.8322862 0.7053795 0.6700199 0.6543798 0.9410900 0.8308395
+ [22] 0.8538800 0.5623382 0.8908286 0.6066625 0.6340646 0.7116334 0.6572123
+ [29] 0.7309598 0.5986688 0.7803928 0.7843977 0.8419329 0.5982689 0.6820309
+ [36] 0.6880169 0.8120032 0.7965210 0.8408615 0.9210848 0.7496332 0.7289810
+ [43] 0.6687016 0.6410449 0.7327381 0.6135799 0.7399008 0.8810350 0.6369756
+ [50] 0.5805677 0.8240483 0.8352407 0.9044178 0.6193653 0.7235268 0.8140865
+ [57] 0.7652252 0.9238309 0.7828896 0.6190852 0.6407914 0.9347842 0.8897194
+ [64] 0.7904841 0.8013183 0.7337116 0.7828678 0.5931167 0.9332674 0.6337919
+ [71] 0.6988058 0.8381253 0.6585415 0.5761368 0.6303946 0.8740385 0.8985285
+ [78] 0.8901814 0.8285320 0.5492572 0.7668378 0.6735545 0.5787566 0.9676952
+ [85] 0.6374973 0.8369323 0.6910389 0.7753031 0.8459868 0.8966862 0.7207895
+ [92] 0.8086641 0.8087507 0.8180787 0.7265155 0.7564125 0.6975901 0.7178893
+ [99] 0.7380310 0.6219115
+> firsthalf = sort(firsthalf, decreasing = FALSE)
+> secondhalf = sort(secondhalf, decreasing = TRUE)
+> hist(c(firsthalf, secondhalf))
+> firsthalf
+  [1] 0.06012546 0.06723553 0.09456260 0.11360040 0.15115146 0.15364765 0.16255925
+  [8] 0.16513320 0.17287997 0.17485791 0.18045596 0.18413194 0.18424223 0.19005763
+ [15] 0.19302512 0.19390131 0.19718775 0.20202923 0.21549895 0.21574517 0.21959312
+ [22] 0.22311193 0.22922848 0.23227578 0.23583327 0.24458063 0.24672820 0.25046670
+ [29] 0.25409568 0.25548226 0.25823403 0.26735798 0.26830407 0.26869710 0.27435841
+ [36] 0.27559125 0.27781522 0.28306881 0.28647385 0.29913570 0.30439581 0.30535002
+ [43] 0.30678268 0.31257458 0.31600452 0.32210346 0.32543099 0.33149931 0.33436978
+ [50] 0.34549105 0.34999449 0.35575795 0.35627439 0.35986598 0.36451380 0.36588399
+ [57] 0.36897228 0.37337621 0.37380818 0.37445356 0.37840734 0.37910202 0.38067617
+ [64] 0.38191832 0.38503035 0.38543069 0.40008302 0.40308159 0.40570906 0.40789055
+ [71] 0.40819920 0.41115311 0.41125083 0.41794026 0.43237772 0.43720188 0.43804293
+ [78] 0.44268818 0.44294838 0.44320615 0.44597766 0.45228023 0.45247225 0.45496349
+ [85] 0.45847579 0.45901774 0.45968869 0.46659842 0.46878520 0.46928185 0.46939413
+ [92] 0.47410462 0.47722772 0.48429933 0.48463832 0.48882950 0.49027107 0.49401951
+ [99] 0.49474642 0.49947415
+> secondhalf
+> hist(c(firsthalf, secondhalf), breaks = 200)
+> c(firsthalf, secondhalf)
